@@ -12,6 +12,18 @@
           <img src="{{ printf "images/logos/%s" $logo | relURL }}">
         </div>
       </div>
+      {{ with .Site.Params.footer.contact }}
+      <div class="column">
+          <div class="footer-column">
+            <div class="footer-header">
+                {{ with .title }}<h3>{{ . }}</h3>{{end}}
+            </div>
+            {{ with .phone }}<div>{{.}}</div>{{end}}
+            {{ with .email }}<div>{{.}}</div>{{end}}
+            {{ with .address }}<div>{{.}}</div>{{end}}
+          </div>
+        </div>
+      {{ end }}
       {{- range $quickLinks }}
         <div class="column">
           <div class="footer-column">
@@ -53,5 +65,6 @@
         </div>
       </div>
     </div>
+    {{ with .Site.Params.footer.copyright }}<div>{{.}}</div>{{ end }}
   </div>
 </footer>
