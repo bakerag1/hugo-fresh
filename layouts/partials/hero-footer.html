@@ -5,9 +5,9 @@
     <div class="tabs is-centered">
       <ul>
         {{- range $clientLogos }}
-        <li>
+        <li style="display: inline-block;">
           <a {{ if .url }} href="{{ .url }}" {{ end }}>
-            <img class="partner-logo" title= "{{ .logo }}" src="{{ printf "images/logos/clients/%s.svg" .logo | relURL }}">
+            <img style="border-radius: 100%; height: 120px" class="partner-logo" title= "{{ .logo }}" src="{{ printf "images/logos/clients/%s.svg" .logo | relURL }}">
           </a>
         </li>
         {{- end }}
